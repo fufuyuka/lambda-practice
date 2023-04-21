@@ -1,24 +1,16 @@
-# README
+## 学習用
+**AWS Lambda**  
+プログラムを用意するだけで構築できるサーバーレスのサービス。多くの場合、可用性と耐障害性に対処する機能も組み込まれている。
+サーバーの起動や管理なしで、コード（Lambda関数）を自動実行できる。AWSのサーバーレスのサービスは、Lambda以外にも色々な種類がある。
+> サーバーレスとは  
+> クラウドサービス特有の構造で、運用時に必要なサーバーの構築や保守などの管理を、クラウドサービス側（AWS）に任せる仕組みのとこ。
+> インフラの構築や運用にかかるコストを抑えられる。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### 内容
+Railsアプリケーション、S3、Lambdaを連携させたアプリケーションを作成する。
+RailsアプリケーションからS3バケットに画像を保存し、さらに画像をリサイズし、別のバケットに保存する。  
+**処理の流れ**
+1. Railsアプリケーションで画像をアップロードする
+2. 画像をS3へアップロードする
+3. S3に画像をアップロードすると、Lambda関数が実行される
+4. アップロードされた画像をリサイズし、別のS3へ保存する
